@@ -23,13 +23,15 @@ var SLIDE_CONFIG = {
   presenters: [{
     name: 'Firstname Lastname',
     company: 'Job Title<br>CiTIUS',
-    gplus: 'http://plus.google.com/1234567890',
+    email: 'youremail@usc.es',
+    //gplus: 'http://plus.google.com/1234567890',
     twitter: '@yourhandle',
     www: 'http://www.you.com',
     github: 'http://github.com/you'
   }/*, {
     name: 'Second Name',
     company: 'Job Title, CiTIUS',
+    email: 'youremail@usc.es',
     gplus: 'http://plus.google.com/1234567890',
     twitter: '@yourhandle',
     www: 'http://www.you.com',

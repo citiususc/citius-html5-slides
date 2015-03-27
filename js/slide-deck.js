@@ -128,11 +128,11 @@ SlideDeck.prototype.addEventListeners_ = function() {
   //   'msTransition': 'MSTransitionEnd',
   //   'transition': 'transitionend'
   // };
-  // 
+  //
   // // Find the correct transitionEnd vendor prefix.
   // window.transEndEventName = transEndEventNames[
   //     Modernizr.prefixed('transition')];
-  // 
+  //
   // // When slides are done transitioning, kickoff loading iframes.
   // // Note: we're only looking at a single transition (on the slide). This
   // // doesn't include autobuilds the slides may have. Also, if the slide
@@ -342,24 +342,36 @@ SlideDeck.prototype.loadConfig_ = function(config) {
         presenterTitle.push(p.company);
       }
       html = presenterTitle.join(' - ') + '<br>';
+      var html2 = [];
 
-      var gplus = p.gplus ? '<span>g+</span><a href="' + p.gplus +
-          '">' + p.gplus.replace(/https?:\/\//, '') + '</a>' : '';
+      if(p.email){
+         html2.push('<span>email</span><a href="mailto:' + p.email +
+                 '">' + p.email + '</a>');
+      }
 
-      var twitter = p.twitter ? '<span>twitter</span>' +
-          '<a href="http://twitter.com/' + p.twitter + '">' +
-          p.twitter + '</a>' : '';
+      if(p.twitter){
+         html2.push('<span>twitter</span>' +
+                 '<a href="http://twitter.com/' + p.twitter + '">' +
+                 p.twitter + '</a>');
+      }
 
-      var www = p.www ? '<span>www</span><a href="' + p.www +
-                        '">' + p.www.replace(/https?:\/\//, '') + '</a>' : '';
+      if(p.www){
+         html2.push('<span>www</span><a href="' + p.www +
+                  '">' + p.www.replace(/https?:\/\//, '') + '</a>');
+      }
 
-      var github = p.github ? '<span>github</span><a href="' + p.github +
-          '">' + p.github.replace(/https?:\/\//, '') + '</a>' : '';
+      if(p.github){
+         html2.push('<span>github</span><a href="' + p.github +
+                 '">' + p.github.replace(/https?:\/\//, '') + '</a>');
+      }
 
-      var html2 = [gplus, twitter, www, github].join('<br>');
+      if(p.gplus){
+         html2.push('<span>g+</span><a href="' + p.gplus +
+                 '">' + p.gplus.replace(/https?:\/\//, '') + '</a>');
+      }
 
       if (dataConfigContact) {
-        dataConfigContact.innerHTML = html2;
+         dataConfigContact.innerHTML = html2.join('<br>');
       }
     } else {
       for (var i = 0, p; p = presenters[i]; ++i) {
@@ -571,7 +583,7 @@ SlideDeck.prototype.updateSlides_ = function(opt_dontPush) {
   this.triggerSlideEvent('slideenter', curSlide);
 
 // window.setTimeout(this.disableSlideFrames_.bind(this, curSlide - 2), 301);
-// 
+//
 // this.enableSlideFrames_(curSlide - 1); // Previous slide.
 // this.enableSlideFrames_(curSlide + 1); // Current slide.
 // this.enableSlideFrames_(curSlide + 2); // Next slide.
@@ -781,3 +793,4 @@ SlideDeck.prototype.loadAnalytics_ = function() {
     }
   });
 })();
+
