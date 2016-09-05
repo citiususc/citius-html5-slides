@@ -20,7 +20,7 @@
  */
 ::selection {
   color: white;
-  background-color: $brand-yellow;
+  background-color: $brand-orange-citius;
   @include text-shadow(none);
 }
 
@@ -56,7 +56,7 @@
 
 body {
   background: black;
-  background-image: url(../../images/subtlepatterns/robots.png);
+  background-image: url(../../images/textures/citius.png);
   background-repeat: repeat;
 }
 
@@ -139,7 +139,7 @@ slides > slide {
       position: absolute;
       bottom: $slide-top-bottom-padding / 2;
       left: $slide-left-right-padding;
-      background: url(../../images/citius-logo-128.png) no-repeat 0 50%;
+      background: url(../../images/vector/citius_logo_rectangle.svg) no-repeat 0 50%;
       @include background-size($brand-small-icon-size $brand-small-icon-size);
       padding-left: $brand-small-icon-size + 10;
       height: $brand-small-icon-size;
@@ -828,7 +828,7 @@ article.smaller {
 }
 
 .thank-you-slide {
-  background: $brand-blue !important;
+  background: $gray-4 !important;
   color: white;
 
   h2 {
@@ -864,8 +864,8 @@ aside.gdbar {
   position: absolute;
   left: -1px;
   top: 125px;
-  @include border-radius(0 10px 10px 0);
-  @include background(linear-gradient(left, $gray-1, $gray-1) no-repeat);
+  @include border-radius(0 0 0 0);
+  @include background(linear-gradient(left, $brand-orange-citius, $brand-orange-citius) no-repeat);
   @include background-size(0% 100%);
   @include transition(all 0.5s ease-out 0.5s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 
@@ -888,11 +888,11 @@ aside.gdbar {
   }
 
   img {
-    width: 85px;
-    height: 85px;
+    width: 101px;
+    height: 101px;
     position: absolute;
     right: 0;
-    margin: 8px 15px;
+    margin: 0;
   }
 }
 
